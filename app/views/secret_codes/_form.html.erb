@@ -1,0 +1,12 @@
+<%= form_for(@secret_code) do |f| %>
+   
+<%= f.select :stoken, @dropdown, :selected => '10' %>
+
+  <div class="field">
+    <%= f.label :code %><br>
+    <%= f.text_field :code %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

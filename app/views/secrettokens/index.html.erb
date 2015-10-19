@@ -1,0 +1,44 @@
+<p id="notice">
+	<%= notice %>
+</p>
+
+<h1>Listing Secrettokens</h1>
+<table>
+	<thead>
+		<tr>
+			<th>Code</th>
+			<th colspan="3"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @secrettokens.each do |secrettoken| %>
+		<tr>
+			<td><%= secrettoken.code %></td>
+			<td><%= link_to 'Show', secrettoken %></td>
+			<td><%= link_to 'Edit', edit_secrettoken_path(secrettoken) %></td>
+			<td><%= link_to 'Destroy', secrettoken, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<br>
+
+<%= link_to 'New Secrettoken', new_secrettoken_path %>
+<div class="container">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Secret Code</th>
+				<th>User Email</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @secrettokens.each do |secrettoken| %>
+			<tr>
+				<td><%= secrettoken.code %></td>
+				<td>john@example.com</td>
+			</tr>
+		</tbody>
+		<% end %>
+	</table>
+</div>
